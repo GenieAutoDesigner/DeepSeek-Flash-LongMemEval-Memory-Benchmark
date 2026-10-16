@@ -6,6 +6,21 @@ All numbers below were measured by me with **DeepSeek V4 Flash (no reasoning)** 
 
 > The engine's code is not published. This repository contains the results, per-question scores and the evaluation protocol so the numbers can be checked.
 
+## 🥇 #1 in accuracy per dollar in head-to-head testing
+
+Same model (DeepSeek V4 Flash), same judge, same 50 held-out questions, memory-writing cost included:
+
+| System | Accuracy | Cost / question | Cost per correct answer |
+|---|---|---|---|
+| **Proposed engine (v24)** | **86 %** | **0.0057 $** | **0.0066 $** |
+| Mastra Observational Memory | 80 % | ~0.061 $ | ~0.076 $ |
+| Modern RAG | 78 % | ~0.004 $ | ~0.005 $ |
+| Mem0 open source | 72 % | ~0.10 $ | ~0.14 $ |
+
+- **Most accurate system tested** — and **~11× cheaper than Mastra OM, ~18× cheaper than Mem0**.
+- **No tested system is both cheaper and more accurate.** Plain RAG is slightly cheaper but 8 points less accurate (on the full held-out half: 74.8 % vs 89.2 %).
+- Costs at DeepSeek list price (0.30 / 1.20 $ per M tokens). Engine cost is measured; rival costs are computed from their measured token usage.
+
 ![Head-to-head](head_to_head.png)
 
 ## Headline result (engine v24)
